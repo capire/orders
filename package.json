@@ -1,6 +1,8 @@
 {
   "name": "@capire/orders",
-  "version": "1.0.0",
+  "version": "2.0.1",
+  "description": "A generic reuse service for managing orders.",
+  "repository": "https://github.com/capire/orders",
   "dependencies": {
     "@cap-js/hana": ">=1",
     "@capire/common": "*",
