@@ -1,4 +1,5 @@
 using { sap.capire.orders as my } from '../db/schema';
+namespace sap.capire.orders.api;
 
 service OrdersService {
   entity Orders as projection on my.Orders;

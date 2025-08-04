@@ -10,7 +10,7 @@
 
 
 
-using { OrdersService } from '../srv/orders-service';
+using { sap.capire.orders.api.OrdersService } from '../srv/orders-service';
 
 
 @odata.draft.enabled
