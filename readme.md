@@ -10,8 +10,11 @@ and a corresponding Fiori UI. It is used in the [bookstore](../bookstore) sample
 ### Reuse
 
 ```sh
+npm login --scope=@capire --registry=https://npm.pkg.github.com
 npm add @capire/orders
 ```
+
+[Learn how to authenticate to GitHub packages.](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)
 
 <details>
   <summary><i> Requires this in your .npmrc: </i></summary>
@@ -31,7 +34,7 @@ and consume the service through OData.
 ## Get Help
 
 - Visit the [*capire* docs](https://cap.cloud.sap) to learn about CAP.
-- especially [*Getting Started in a Nutshell*](https://cap.cloud.sap/docs/get-started/in-a-nutshell).
+- Especially [*Getting Started in a Nutshell*](https://cap.cloud.sap/docs/get-started/in-a-nutshell).
 - Visit our [*SAP Community*](https://answers.sap.com/tags/9f13aee1-834c-4105-8e43-ee442775e5ce) to ask questions.
 - Find the full sample set on https://github.com/capire/samples.
 
