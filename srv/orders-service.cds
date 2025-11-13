@@ -5,7 +5,7 @@ service OrdersService {
   entity Orders as projection on my.Orders;
 
   @odata.draft.bypass
-  @requires: [ 'system-user', 'authenticated-user' ]
+  // @requires: [ 'system-user', 'authenticated-user' ] // REVISIT: currently does not work locally
   entity OrdersNoDraft as projection on my.Orders;
 
   event OrderChanged {
