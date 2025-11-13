@@ -12,6 +12,7 @@
   "cds": {
     "requires": {
       "messaging": true,
+      "[development]": { "messaging": { "kind": "file-based-messaging" } },
       "db": true
     }
   },
