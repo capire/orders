@@ -7,12 +7,44 @@
     "@cap-js/hana": ">=1",
     "@capire/common": "*",
     "@sap/cds": ">=5",
-    "@sap/xssec": "^4"
+    "@sap/xssec": "^4",
+    "@sap/cds-mtxs": "git+https://github.tools.sap/cap/cds-mtxs.git#ext-appid-separation",
+    "@sap-cloud-sdk/connectivity": "^4",
+    "@sap-cloud-sdk/resilience": "^4",
+    "@sap-cloud-sdk/http-client": "^4"
   },
   "cds": {
     "requires": {
       "messaging": true,
-      "db": true
+      "fiori": {
+        "preview": true
+      },
+      "cds.xt.DeploymentService": false,
+      "cds.xt.RemoteExtensibilityService": {
+        "kind": "rest",
+        "model": "@sap/cds-mtxs/srv/extensibility-service",
+        "[development]": {
+          "credentials": {
+            "url": "http://localhost:4005"
+          }
+        },
+        "[production]": {
+          "credentials": {
+            "destination": "mtx-api"
+          }
+        }
+      },
+      "multitenancy": true,
+      "extensibility": true,
+      "[development]": {
+        "db": {
+          "impl": "@cap-js/sqlite",
+          "credentials": {
+            "url": "../../../db.sqlite"
+          },
+          "kind": "sqlite"
+        }
+      }
     }
   },
   "scripts": {
