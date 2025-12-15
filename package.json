@@ -8,7 +8,7 @@
     "@capire/common": "*",
     "@sap/cds": ">=5",
     "@sap/xssec": "^4",
-    "@sap/cds-mtxs": "git+https://github.tools.sap/cap/cds-mtxs.git",
+    "@sap/cds-mtxs": "3.6.0",
     "@sap-cloud-sdk/connectivity": "^4",
     "@sap-cloud-sdk/resilience": "^4",
     "@sap-cloud-sdk/http-client": "^4"
