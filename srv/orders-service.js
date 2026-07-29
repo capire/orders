@@ -8,8 +8,7 @@ class OrdersService extends cds.ApplicationService {
     this.before ('UPDATE', 'Orders', async function(req) {
       const { ID, Items } = req.data
       if (Items) for (let { product_ID, quantity } of Items) {
-        const { quantity:before } = (await SELECT.one.from (OrderItems, oi => oi.quantity) .where ({up__ID:ID, product_ID})) || {}
-        if (!before)  continue
+        const { quantity:before } = (await SELECT.one.from (OrderItems, oi => oi.quantity) .where ({up__ID:ID, product_ID})) || {quantity: 0}
         if (quantity != before) await this.orderChanged (product_ID, quantity-before)
       }
     })
