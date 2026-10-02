@@ -1,11 +1,14 @@
 {
-	"_version": "1.8.0",
+	"_version": "1.28.0",
 	"sap.app": {
-		"id": "orders",
+		"id": "capire.orders",
 		"type": "application",
 		"title": "Order Management",
 		"description": "CAP Sample Application",
 		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
 		"dataSources": {
 			"OrdersService": {
 				"uri": "/odata/v4/orders/",
@@ -23,6 +26,7 @@
 	},
 	"sap.ui5": {
         "dependencies": {
+            "minUI5Version": "1.136.1",
             "libs": {
                 "sap.fe.templates": {}
             }
@@ -38,12 +42,7 @@
                     "synchronizationMode": "None",
                     "operationMode": "Server",
                     "autoExpandSelect" : true,
-                    "earlyRequests": true,
-                    "groupProperties": {
-                        "default": {
-                          "submit": "Auto"
-                        }
-                    }
+                    "earlyRequests": true
 				}
 			}
 		},
@@ -77,7 +76,8 @@
                     "name": "sap.fe.templates.ListReport",
                     "options": {
 						"settings" : {
-							"entitySet" : "Orders",
+							"contextPath" : "/Orders",
+							"liveMode": true,
 							"navigation" : {
 								"Orders" : {
 									"detail" : {
@@ -94,7 +94,7 @@
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings" : {
-                            "entitySet": "Orders",
+                            "contextPath": "/Orders",
 							"navigation" : {
 								"Items": {
                                     "detail": {
@@ -121,7 +121,7 @@
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings" : {
-                            "entitySet": "Orders_Items"
+                            "contextPath": "/Orders/Items"
                         }
                     }
                 },
@@ -131,7 +131,7 @@
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings" : {
-                            "entitySet": "Books",
+                            "contextPath": "/Books",
                             "navigation": {
                                 "author": {
                                     "detail": {
@@ -148,7 +148,7 @@
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings" : {
-                            "entitySet": "Authors"
+                            "contextPath": "/Authors"
                         }
                     }
                 }
@@ -161,7 +161,11 @@
 	},
 	"sap.ui": {
 		"technology": "UI5",
-		"fullWidth": false
+		"deviceTypes": {
+			"desktop": true,
+			"phone": true,
+			"tablet": true
+		}
 	},
 	"sap.fiori": {
 		"registrationIds": [],
