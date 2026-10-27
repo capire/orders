@@ -14,7 +14,7 @@
 				"manage-orders": {
 					title: "Manage Orders",
 					description: "CAP Sample App",
-					additionalInformation: "SAPUI5.Component=orders",
+					additionalInformation: "SAPUI5.Component=capire.orders",
 					applicationType : "URL",
 					url: "webapp",
 					navigationMode: "embedded"
@@ -29,6 +29,7 @@
 			data-sap-ui-compatVersion="edge"
 			data-sap-ui-theme="sap_horizon"
 			data-sap-ui-frameOptions="allow"
+			data-sap-ui-resourceroots='{"capire.orders": "./webapp"}'
 	></script>
 	<script>
 		sap.ui.getCore().attachInit(()=> sap.ushell.Container.createRenderer().placeAt("content"))
